@@ -2,7 +2,7 @@ export const Bio = {
   name: "Aziz El Madini",
   roles: ["Full stack Developer", "FrontEnd Developer", "Web Integrator"],
   description:
-    "I'm a web developer based in Casablanca, Morocco. Specializing in front-end engineering, I'm passionate about crafting impactful, well-designed websites that make a statement. With a dedication to modern, intuitive design and a knack for responsiveness across all devices, I bring ideas to life using a diverse skill set and a love for open source and startup culture.",
+    "I'm a web developer based in Casablanca, Morocco. Specializing in front-end engineering, I'm passionate about crafting impactful digital experiences that blur the lines between applications and websites. With a focus on modern design and seamless responsiveness across all devices, I bring ideas to life using a diverse skill set and a love for open source and startup culture.",
   // "Experienced web developer with a passion for creating innovative and user-friendly digital solutions. With a strong background in both front-end and back-end development, I have a proven track record of delivering high-quality projects for various clients and organizations. From designing responsive interfaces to implementing robust backend functionalities, I strive to combine technical expertise with creative problem-solving skills to exceed expectations and drive business success.",
   github: "https://github.com/azizelmadini",
   resume: "",
@@ -435,7 +435,8 @@ export const projects = [
     date: "Apr 2023 - Apr 2024",
     description:
       "Create a variety of educational content: text, video, audio, image... and animate your training with fun quizzes to assess the knowledge of your learners.",
-    image: "https://digitallearning.app/assets/default/img/fav_icon.jpg",
+    image:
+      "https://digitallearning.app/assets/default/lp/icons/home/new-logo.svg",
     // "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAVFBMVEVqueoWmeMamuIXmeMamuMamuEAlOExpOXM5ffa7vpHqufv+f3////s9/37//5PsOhFrOckn+Xj8vwtouOEx/B8w+6m2fSc1PKs3PTR6vkjn+NTrunLxZxZAAAArElEQVR4Ac3SVQLDIAwA0GjdXe5/z4W5pPuuYQ8HACQm+X2IMFggVwXoAFVJwaoIuyxsKO9tMYquVSn88FU7TlJ9dvSNWV4cY1xWLrIVkiF5WDcqHJdet9gWXUuUWUsX0zaKrKWHVKT9MGaHGE9z9pytj3QSbF+z9XGZGh/1uUMurpudSpd/trzfkj2zy6bZ/rh7AZ83iPFxqgHFagKJkn9tDdFiR/nflSdDuACDURADVraH1gAAAABJRU5ErkJggg==",
     tags: ["VueJS", "JavaScript", "Vuetify", "Tailwind", "Laravel", "Mysql"],
     category: "web app",
@@ -510,12 +511,32 @@ export const projects = [
     title: "Digital manager",
     date: "Apr 2022 - Present",
     description:
-      "Digital manager la plateforme qui améliore la collaboration, la productivité et l'efficacité de vos collaborateurs · Restez organisé · Gérez toutes",
+      "Digital manager the platform that improves the collaboration, productivity and efficiency of your employees · Stay organized · Manage all",
     image:
       "https://digitalmanager.ai/wp-content/uploads/2022/03/digital-manager-logo-1.svg",
     tags: ["HTML", "CSS", "SCSS", "JavaScript", "Laravel", "Ajax"],
     category: "web app",
     // github: "https://github.com/FelipeRodrigues662/LabProg",
     webapp: "https://digitalmanager.ai/",
+  },
+  {
+    id: 5,
+    title: "Hospital manager",
+    date: "Dec 2023 - Present",
+    description:
+      "Everything for medical management. Transform your medical facility into a high-performance machine with HospitalManager.",
+    image: "https://www.hospitalmanager.app/web/img/logo.jpg",
+    tags: [
+      "HTML",
+      "Tailwind",
+      "Bootstrap",
+      "JavaScript",
+      "Laravel",
+      "Ajax",
+      "Alpine.js",
+    ],
+    category: "web app",
+    // github: "https://github.com/FelipeRodrigues662/LabProg",
+    webapp: "https://www.hospitalmanager.app/",
   },
 ];
