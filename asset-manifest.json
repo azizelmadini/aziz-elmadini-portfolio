@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/aziz-elmadini-portfolio/static/css/main.bf538fe7.css",
+    "main.js": "/aziz-elmadini-portfolio/static/js/main.a7d18e5e.js",
+    "static/media/MyPicture.jpg": "/aziz-elmadini-portfolio/static/media/MyPicture.7dba8a06aff4282b4576.jpg",
+    "static/media/my-resume.pdf": "/aziz-elmadini-portfolio/static/media/my-resume.8f51410f43dbbd97bfc1.pdf",
+    "static/media/alogo.png": "/aziz-elmadini-portfolio/static/media/alogo.f9c14e0ff0e3cde07004.png",
+    "index.html": "/aziz-elmadini-portfolio/index.html",
+    "main.bf538fe7.css.map": "/aziz-elmadini-portfolio/static/css/main.bf538fe7.css.map",
+    "main.a7d18e5e.js.map": "/aziz-elmadini-portfolio/static/js/main.a7d18e5e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf538fe7.css",
+    "static/js/main.a7d18e5e.js"
+  ]
+}
