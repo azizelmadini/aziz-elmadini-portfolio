@@ -85,6 +85,8 @@ const Copyright = styled.p`
 `;
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <FooterContainer>
       <FooterWrapper>
@@ -95,6 +97,7 @@ function Footer() {
           <NavLink href="#experience">Experience</NavLink>
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#education">Education</NavLink>
+          <NavLink href="#contact">Contact</NavLink>
         </Nav>
         <SocialMediaIcons>
           {Bio.github && (
@@ -113,7 +116,9 @@ function Footer() {
             </SocialMediaIcon>
           )}
         </SocialMediaIcons>
-        <Copyright>&copy; 2024 Aziz El Madini. All rights reserved.</Copyright>
+        <Copyright>
+          &copy; {currentYear} Aziz El Madini. All rights reserved.
+        </Copyright>
       </FooterWrapper>
     </FooterContainer>
   );

@@ -1,9 +1,9 @@
 export const Bio = {
   name: "Aziz El Madini",
-  roles: ["Full stack Developer", "FrontEnd Developer", "Web Integrator"],
+  roles: ["Front-End Developer", "Web Integrator", "Full-Stack Developer"],
   description:
-    "I'm a web developer based in Casablanca, Morocco. Specializing in front-end engineering, I'm passionate about crafting impactful digital experiences that blur the lines between applications and websites. With a focus on modern design and seamless responsiveness across all devices, I bring ideas to life using a diverse skill set and a love for open source and startup culture.",
-  // "Experienced web developer with a passion for creating innovative and user-friendly digital solutions. With a strong background in both front-end and back-end development, I have a proven track record of delivering high-quality projects for various clients and organizations. From designing responsive interfaces to implementing robust backend functionalities, I strive to combine technical expertise with creative problem-solving skills to exceed expectations and drive business success.",
+    // "I'm a web developer from Casablanca, Morocco, specializing in front-end engineering. I'm passionate about crafting seamless digital experiences that blend form and function. With a keen eye for modern design and a dedication to responsiveness, I bring ideas to life with creativity and precision. Let's build something extraordinary together!",
+    "Experienced web developer with a passion for creating innovative and user-friendly digital solutions. With a strong background in both front-end and back-end development, I have a proven track record of delivering high-quality projects for various clients and organizations. From designing responsive interfaces to implementing robust backend functionalities, I strive to combine technical expertise with creative problem-solving skills to exceed expectations and drive business success.",
   github: "https://github.com/azizelmadini",
   resume: "",
   linkedin: "https://www.linkedin.com/in/azizelmadini/",

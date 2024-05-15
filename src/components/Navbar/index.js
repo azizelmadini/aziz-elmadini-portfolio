@@ -16,11 +16,35 @@ import {
 import { DiCssdeck } from "react-icons/di";
 import { FaBars } from "react-icons/fa";
 import { Bio } from "../../data/constants";
-import { Close, CloseRounded, GitHub } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
+import {
+  Close,
+  CloseRounded,
+  GitHub,
+  LightMode,
+  LightModeOutlined,
+  DarkModeOutlined,
+} from "@mui/icons-material";
 import { useTheme } from "styled-components";
 import HeroImg from "../../images/alogo.png";
+import styled from "styled-components";
 
-const Navbar = () => {
+const ThemeIcon = styled(IconButton)`
+  && {
+    color: ${({ theme }) => theme.primary};
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+`;
+const MobileThemeIcon = styled(IconButton)`
+  && {
+    color: ${({ theme }) => theme.primary};
+    width: max-content;
+  }
+`;
+
+const Navbar = ({ toggleDarkMode, darkMode }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const theme = useTheme();
   return (
@@ -54,7 +78,12 @@ const Navbar = () => {
           <NavLink href="#experience">Experience</NavLink>
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#education">Education</NavLink>
+          <NavLink href="#contact">Contact</NavLink>
         </NavItems>
+        <ThemeIcon onClick={toggleDarkMode}>
+          {darkMode ? <LightMode /> : <DarkModeOutlined />}
+        </ThemeIcon>
+
         {/* <ButtonContainer>
           <GitHubButton
             style={{ gap: "6px" }}
@@ -107,6 +136,17 @@ const Navbar = () => {
             >
               Education
             </MobileLink>
+            <MobileLink
+              href="#contact"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+            >
+              Contact
+            </MobileLink>
+            <MobileThemeIcon onClick={toggleDarkMode}>
+              {darkMode ? <LightMode /> : <DarkModeOutlined />}
+            </MobileThemeIcon>
             {/* <GitHubButton
               style={{
                 gap: "6px",
