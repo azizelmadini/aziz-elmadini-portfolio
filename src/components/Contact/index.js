@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { Snackbar } from "@mui/material";
+import { Snackbar, Alert } from "@mui/material";
+import { Portal } from "@mui/base";
+import { useTranslation } from "react-i18next";
 
 const Container = styled.div`
   display: flex;
@@ -134,56 +136,83 @@ const ContactButton = styled.button`
 
 const Contact = () => {
   //hooks
-  const [open, setOpen] = React.useState(false);
+  const { t } = useTranslation();
   const form = useRef();
+  const [loading, setLoading] = useState(false);
+  const [openSnackbar, setOpenSnackbar] = React.useState(false);
+  const [snackbarSeverity, setSnackbarSeverity] = React.useState("success");
+  const [snackbarMessage, setSnackbarMessage] = React.useState("");
 
-  const handleSubmit = (e) => {
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("dd");
-    emailjs
-      .sendForm(
+    setLoading(true);
+
+    try {
+      const result = await emailjs.sendForm(
         "service_rwmyoco",
-        "template_ujeamsh",
+        "template_2soqna4",
         form.current,
         "lyv_lAWDNqG0wxX42"
-      )
-      .then(
-        (result) => {
-          setOpen(true);
-          form.current.reset();
-        },
-        (error) => {
-          console.log(error.text);
-        }
       );
+      console.log(result.text);
+      setSnackbarSeverity("success");
+      setSnackbarMessage("Email sent successfully!");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setSnackbarSeverity("error");
+      setSnackbarMessage("Failed to send email");
+    } finally {
+      setLoading(false);
+      setOpenSnackbar(true);
+      form.current.reset();
+    }
   };
 
   return (
     <Container id="contact">
       <Wrapper>
-        <Title>Contact</Title>
-        <Desc>Contact me for jobs and opportunities</Desc>
+        <Title>{t("contact")}</Title>
+        <Desc>{t("contact_desc")}</Desc>
         <ContactForm ref={form} onSubmit={handleSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" required />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
+          <ContactTitle>{t("email_me")}</ContactTitle>
+          <ContactInput
+            placeholder={t("your_email")}
+            name="from_email"
+            required
+          />
+          <ContactInput placeholder={t("your_name")} name="from_name" />
+          <ContactInput placeholder={t("subject")} name="subject" />
           <ContactInputMessage
-            placeholder="Message"
+            placeholder={t("message")}
             rows="4"
             name="message"
             required
           />
-          <ContactButton type="submit">Send</ContactButton>
+          <ContactButton type="submit">
+            {loading ? t("sending...") : t("send")}
+          </ContactButton>
         </ContactForm>
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={() => setOpen(false)}
-          message="Email sent successfully!"
-          severity="success"
-        />
       </Wrapper>
+      <Portal>
+        <Snackbar
+          open={openSnackbar}
+          autoHideDuration={6000}
+          onClose={handleCloseSnackbar}
+        >
+          <Alert
+            onClose={handleCloseSnackbar}
+            severity={snackbarSeverity}
+            sx={{ width: "100%" }}
+            variant="filled"
+          >
+            {snackbarMessage}
+          </Alert>
+        </Snackbar>
+      </Portal>
     </Container>
   );
 };

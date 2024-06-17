@@ -1,19 +1,27 @@
-import React from 'react'
-import { useState } from 'react'
-import { Container, Wrapper, Title, Desc, CardContainer, ToggleButtonGroup, ToggleButton, Divider } from './ProjectsStyle'
-import ProjectCard from '../Cards/ProjectCards'
-import { projects } from '../../data/constants'
-
+import React from "react";
+import { useState } from "react";
+import {
+  Container,
+  Wrapper,
+  Title,
+  Desc,
+  CardContainer,
+  ToggleButtonGroup,
+  ToggleButton,
+  Divider,
+} from "./ProjectsStyle";
+import ProjectCard from "../Cards/ProjectCards";
+import { projects } from "../../data/constants";
+import { useTranslation } from "react-i18next";
 
 const Projects = ({ openModal, setOpenModal }) => {
-  const [toggle, setToggle] = useState('all');
+  const [toggle, setToggle] = useState("all");
+  const { t } = useTranslation();
   return (
     <Container id="projects">
       <Wrapper>
-        <Title>Projects</Title>
-        <Desc>
-        I worked on a wide range of projects related to Websites, Mobile Applications and Interface Design. Here are some of my main projects.
-        </Desc>
+        <Title>{t("projects")}</Title>
+        <Desc>{t("projects_desc")}</Desc>
         {/* <ToggleButtonGroup >
           {toggle === 'all' ?
             <ToggleButton active value="all" onClick={() => setToggle('all')}>All</ToggleButton>
@@ -40,10 +48,17 @@ const Projects = ({ openModal, setOpenModal }) => {
           }
         </ToggleButtonGroup> */}
         <CardContainer>
-          {toggle === 'all' && projects
-            .map((project) => (
-              <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal} />
-            ))}
+          {toggle === "all" &&
+            t("projects_info", { returnObjects: true }).map(
+              (project, index) => (
+                <ProjectCard
+                  key={index}
+                  project={project}
+                  openModal={openModal}
+                  setOpenModal={setOpenModal}
+                />
+              )
+            )}
           {/* {projects
             .filter((item) => item.category == toggle)
             .map((project) => (
@@ -52,7 +67,7 @@ const Projects = ({ openModal, setOpenModal }) => {
         </CardContainer>
       </Wrapper>
     </Container>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

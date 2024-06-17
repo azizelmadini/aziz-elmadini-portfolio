@@ -16,8 +16,9 @@ const Button = styled.button`
     transition: all 0.8s ease-in-out;
 `
 const Card = styled.div`
-    width: 330px;
-    height: 490px;
+    width: 100%;
+    max-width: 330px;
+    height: 450px;
     background-color: ${({ theme }) => theme.card};
     cursor: pointer;
     border-radius: 10px;
@@ -128,7 +129,7 @@ const ProjectCards = ({project,setOpenModal}) => {
             <Image src={project.image}/>
             <Tags>
                 {project.tags?.map((tag, index) => (
-                <Tag>{tag}</Tag>
+                <Tag key={index}>{tag}</Tag>
                 ))}
             </Tags>
             <Details>
@@ -137,8 +138,8 @@ const ProjectCards = ({project,setOpenModal}) => {
                 <Description>{project.description}</Description>
             </Details>
             <Members>
-                {project.member?.map((member) => (
-                    <Avatar src={member.img}/>
+                {project.member?.map((member, index) => (
+                    <Avatar key={index} src={member.img}/>
                 ))}
             </Members>
             {/* <Button>View Project</Button> */}

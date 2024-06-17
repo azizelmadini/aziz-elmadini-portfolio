@@ -5,6 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Bio } from "../../data/constants";
 import { GitHub } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -86,18 +87,19 @@ const Copyright = styled.p`
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>Aziz El Madini</Logo>
+        <Logo>{t("bio.name")}</Logo>
         <Nav>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#experience">Experience</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#education">Education</NavLink>
-          <NavLink href="#contact">Contact</NavLink>
+          <NavLink href="#about">{t("about")}</NavLink>
+          <NavLink href="#skills">{t("skills")}</NavLink>
+          <NavLink href="#experience">{t("experience")}</NavLink>
+          <NavLink href="#projects">{t("projects")}</NavLink>
+          <NavLink href="#education">{t("education")}</NavLink>
+          <NavLink href="#contact">{t("contact")}</NavLink>
         </Nav>
         <SocialMediaIcons>
           {Bio.github && (
@@ -117,7 +119,7 @@ function Footer() {
           )}
         </SocialMediaIcons>
         <Copyright>
-          &copy; {currentYear} Aziz El Madini. All rights reserved.
+          &copy; {currentYear} {t("bio.name")}. {t("all_rights_reserved")}.
         </Copyright>
       </FooterWrapper>
     </FooterContainer>

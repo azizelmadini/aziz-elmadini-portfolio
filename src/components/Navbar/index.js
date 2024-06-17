@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Nav,
   NavLink,
@@ -12,11 +12,13 @@ import {
   MobileMenu,
   MobileNavLogo,
   MobileLink,
+  ThemeIcon,
+  MobileThemeIcon,
+  LanguageLink,
 } from "./NavbarStyledComponent";
 import { DiCssdeck } from "react-icons/di";
 import { FaBars } from "react-icons/fa";
 import { Bio } from "../../data/constants";
-import { IconButton } from "@mui/material";
 import {
   Close,
   CloseRounded,
@@ -25,45 +27,36 @@ import {
   LightModeOutlined,
   DarkModeOutlined,
 } from "@mui/icons-material";
-import { useTheme } from "styled-components";
+import styled, { useTheme } from "styled-components";
 import HeroImg from "../../images/alogo.png";
-import styled from "styled-components";
-
-const ThemeIcon = styled(IconButton)`
-  && {
-    color: ${({ theme }) => theme.primary};
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
-  }
-`;
-const MobileThemeIcon = styled(IconButton)`
-  && {
-    color: ${({ theme }) => theme.primary};
-    width: max-content;
-  }
-`;
+import { useTranslation } from "react-i18next";
+import Button from "@mui/material/Button";
 
 const Navbar = ({ toggleDarkMode, darkMode }) => {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = React.useState(false);
   const theme = useTheme();
+  const [currentLanguage, setCurrentLanguage] = useState(
+    localStorage.getItem("currentLanguage") || i18n.language
+  );
+
+  useEffect(() => {
+    localStorage.setItem("currentLanguage", currentLanguage);
+  }, [currentLanguage]);
+
+  const toggleLanguage = () => {
+    const newLanguage = currentLanguage === "en" ? "fr" : "en";
+    i18n.changeLanguage(newLanguage);
+    setCurrentLanguage(newLanguage);
+  };
+
   return (
     <Nav>
       <NavbarContainer>
         <NavLogo to="/">
-          <a
-            style={{
-              display: "flex",
-              alignItems: "center",
-              color: "white",
-              marginBottom: "20;",
-              cursor: "pointer",
-            }}
-          >
-            {/* <DiCssdeck size="3rem" /> <Span>Portfolio</Span> */}
-            <img src={HeroImg} alt="logo-icon" width="60%;" />
-            {/* <Span>Aziz El madini</Span> */}
-          </a>
+          {/* <DiCssdeck size="3rem" /> <Span>Portfolio</Span> */}
+          <img src={HeroImg} alt="logo-icon" width="60%" />
+          {/* <Span>Aziz El madini</Span> */}
         </NavLogo>
         <MobileIcon>
           <FaBars
@@ -73,17 +66,20 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
           />
         </MobileIcon>
         <NavItems>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#experience">Experience</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#education">Education</NavLink>
-          <NavLink href="#contact">Contact</NavLink>
+          <NavLink href="#about">{t("about")}</NavLink>
+          <NavLink href="#skills">{t("skills")}</NavLink>
+          <NavLink href="#experience">{t("experience")}</NavLink>
+          <NavLink href="#projects">{t("projects")}</NavLink>
+          <NavLink href="#education">{t("education")}</NavLink>
+          <NavLink href="#contact">{t("contact")}</NavLink>
         </NavItems>
         <ThemeIcon onClick={toggleDarkMode}>
           {darkMode ? <LightMode /> : <DarkModeOutlined />}
         </ThemeIcon>
 
+        <LanguageLink onClick={toggleLanguage}>
+          {currentLanguage === "en" ? "FR" : "EN"}
+        </LanguageLink>
         {/* <ButtonContainer>
           <GitHubButton
             style={{ gap: "6px" }}
@@ -102,7 +98,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
                 setIsOpen(!isOpen);
               }}
             >
-              About
+              {t("about")}
             </MobileLink>
             <MobileLink
               href="#skills"
@@ -110,7 +106,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
                 setIsOpen(!isOpen);
               }}
             >
-              Skills
+              {t("skills")}
             </MobileLink>
             <MobileLink
               href="#experience"
@@ -118,7 +114,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
                 setIsOpen(!isOpen);
               }}
             >
-              Experience
+              {t("experience")}
             </MobileLink>
             <MobileLink
               href="#projects"
@@ -126,7 +122,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
                 setIsOpen(!isOpen);
               }}
             >
-              Projects
+              {t("projects")}
             </MobileLink>
             <MobileLink
               href="#education"
@@ -134,7 +130,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
                 setIsOpen(!isOpen);
               }}
             >
-              Education
+              {t("education")}
             </MobileLink>
             <MobileLink
               href="#contact"
@@ -142,11 +138,16 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
                 setIsOpen(!isOpen);
               }}
             >
-              Contact
+              {t("contact")}
             </MobileLink>
             <MobileThemeIcon onClick={toggleDarkMode}>
               {darkMode ? <LightMode /> : <DarkModeOutlined />}
             </MobileThemeIcon>
+
+            <MobileLink onClick={toggleLanguage}>
+              {currentLanguage === "en" ? "FR" : "EN"}
+            </MobileLink>
+
             {/* <GitHubButton
               style={{
                 gap: "6px",
