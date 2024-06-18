@@ -132,16 +132,20 @@ export const TextLoop = styled.div`
   font-weight: 600;
   font-size: 30px;
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
+  line-height: 1.6rem;
+  margin: 1rem 0;
   @media (max-width: 960px) {
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
   @media (max-width: 640px) {
-    font-size: 22px;
-    line-height: 48px;
-    margin-bottom: 16px;
+    // font-size: 22px;
+    // line-height: 48px;
+    // margin-bottom: 16px;
   }
 `;
 

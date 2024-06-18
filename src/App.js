@@ -51,7 +51,7 @@ function App() {
     setDarkMode((prevMode) => !prevMode);
   };
 
-  console.log(darkMode, darkMode ? true : false);
+  // console.log(darkMode, darkMode ? true : false);
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Router>
