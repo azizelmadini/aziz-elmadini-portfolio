@@ -513,11 +513,11 @@ export const projects = [
     description:
       "Digital manager the platform that improves the collaboration, productivity and efficiency of your employees · Stay organized · Manage all",
     image:
-      "https://digitalmanager.ai/wp-content/uploads/2022/03/digital-manager-logo-1.svg",
+      "https://digitalmanager.ma/wp-content/uploads/2022/03/digital-manager-logo-1.svg",
     tags: ["HTML", "CSS", "SCSS", "JavaScript", "Laravel", "Ajax"],
     category: "web app",
     // github: "https://github.com/FelipeRodrigues662/LabProg",
-    webapp: "https://digitalmanager.ai/",
+    webapp: "https://digitalmanager.ma/",
   },
   {
     id: 5,
