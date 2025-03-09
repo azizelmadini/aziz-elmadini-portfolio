@@ -21,5 +21,7 @@ export const lightTheme = {
   card: "#FFFFFF",
   card_light: "#FFFFFF",
   button: "#5c5b5b",
+  white: "#FFFFFF",
+  black: "#000000",
   box_shadow: "#1f263480",
 };

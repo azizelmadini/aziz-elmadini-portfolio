@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import { darkTheme, lightTheme } from "./utils/Themes.js";
 import Navbar from "./components/Navbar";
 import "./App.css";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router, Navigate } from "react-router-dom";
 import HeroSection from "./components/HeroSection";
-import About from "./components/About";
+// import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import ProjectDetails from "./components/ProjectDetails";
+import PageNotFound from "./components/PageNotFound";
 import styled from "styled-components";
 import "./locales/index.js";
 
@@ -55,22 +56,37 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Router>
-        <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <Body>
-          <HeroSection />
-          <Wrapper>
-            <Skills />
-            <Experience />
-          </Wrapper>
-          <Projects openModal={openModal} setOpenModal={setOpenModal} />
-          <Wrapper>
-            <Education />
-            <Contact />
-          </Wrapper>
-          <Footer />
-          {openModal.state && (
-            <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
-          )}
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+                  <HeroSection />
+                  <Wrapper>
+                    <Skills />
+                    <Experience />
+                  </Wrapper>
+                  <Projects openModal={openModal} setOpenModal={setOpenModal} />
+                  <Wrapper>
+                    <Education />
+                    <Contact />
+                  </Wrapper>
+                  <Footer />
+                  {openModal.state && (
+                    <ProjectDetails
+                      openModal={openModal}
+                      setOpenModal={setOpenModal}
+                    />
+                  )}
+                </>
+              }
+            />
+            <Route path='*' element={<PageNotFound/>} />
+            {/* <Route path='*' element={<Navigate replace to='/404'/>} /> */}
+
+          </Routes>
         </Body>
       </Router>
     </ThemeProvider>

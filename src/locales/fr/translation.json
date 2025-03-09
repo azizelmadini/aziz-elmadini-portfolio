@@ -370,6 +370,10 @@
   "message": "Message",
   "send": "Envoyer",
   "sending...": "Envoi...",
-
-  "all_rights_reserved": "Tous droits réservés"
+  "all_rights_reserved": "Tous droits réservés",
+  "error": {
+    "page_not_found": "Page non trouvée",
+    "the_page_looking": "La page que vous recherchez n'existe pas.",
+    "go_back_home": "Retourner à l'accueil"
+  }
 }

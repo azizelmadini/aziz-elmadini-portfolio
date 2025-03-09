@@ -367,5 +367,10 @@
   "message": "Message",
   "send": "Send",
   "sending...": "Sending...",
-  "all_rights_reserved": "All rights reserved"
+  "all_rights_reserved": "All rights reserved",
+  "error": {
+    "page_not_found": "Page Not Found",
+    "the_page_looking": "The page you are looking for does not exist.",
+    "go_back_home": "Go Back Home"
+  }
 }
