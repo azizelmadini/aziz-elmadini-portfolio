@@ -7,7 +7,6 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import ExperienceCard from "../Cards/ExperienceCard";
-import { experiences } from "../../data/constants";
 import { useTranslation } from "react-i18next";
 
 const Container = styled.div`
@@ -90,11 +89,11 @@ const Experience = () => {
             }}
           >
             {t("experiences_info", { returnObjects: true }).map(
-              (experience, index) => (
+              (experience, index, array) => (
                 <TimelineItem key={index}>
                   <TimelineSeparator>
                     <TimelineDot variant="outlined" color="secondary" />
-                    {index !== experiences.length - 1 && (
+                    {index !== array.length - 1 && (
                       <TimelineConnector style={{ background: "#854CE6" }} />
                     )}
                   </TimelineSeparator>

@@ -17,7 +17,6 @@ import {
 } from "./HeroStyle";
 import HeroImg from "../../images/MyPicture.jpg";
 import Typewriter from "typewriter-effect";
-import { Bio } from "../../data/constants";
 import MyResume from "../../pdf/my-resume.pdf";
 import MonCV from "../../pdf/mon-cv.pdf";
 import { useTranslation } from "react-i18next";

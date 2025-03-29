@@ -159,10 +159,29 @@
 
   "experiences_info": [
     {
-      "id": 0,
+      "id": 6,
+      "company": "Skillenium, Casablanca",
+      "role": "Développeur Web Senior",
+      "date": "Janvier 2025 - Présent",
+      "desc": "Direction d'équipe, gestion d'infrastructure et développement d'applications web à travers de multiples projets.",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "MySQL",
+        "Docker",
+        "Git",
+        "Leadership d'équipe",
+        "Architecture système"
+      ],
+      "img": "https://media.licdn.com/dms/image/v2/D4E0BAQGT87I-5P4tqw/company-logo_100_100/company-logo_100_100/0/1711538996828?e=2147483647&v=beta&t=MS41gJ9ShkjdG7gHl3qelfFGQErx5YBP3zN8fZB7d2E"
+    },
+    {
+      "id": 5,
       "company": "Digital Partnership Group (DPG), Casablanca",
       "role": "Développeur Web",
-      "date": "Avril 2022 - Présent",
+      "date": "Avril 2022 - Décembre 2024",
       "desc": "Responsable du développement et de la maintenance des applications pour divers clients.",
       "skills": [
         "HTML",
@@ -177,7 +196,7 @@
       "img": "https://media.licdn.com/dms/image/C4E0BAQG3RTf0Bd2brg/company-logo_200_200/0/1674822989543/digital_partnership_logo?e=2147483647&v=beta&t=S57XZv4ZUKqYdQzZNVYCH2VYZtCfkh3fKpI9mind4g8"
     },
     {
-      "id": 1,
+      "id": 4,
       "company": "Globres AG, Remote",
       "role": "Développeur Web Indépendant",
       "date": "Août 2020 - Juillet 2021",
@@ -186,7 +205,7 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0wc3DUqKerU5vUPE-65zg8-f1YjSRbM4VKzDmZsdI9g&s"
     },
     {
-      "id": 2,
+      "id": 3,
       "company": "Globres, Casablanca",
       "role": "Développeur Web",
       "date": "Décembre 2019 - Juillet 2020",
@@ -195,7 +214,7 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0wc3DUqKerU5vUPE-65zg8-f1YjSRbM4VKzDmZsdI9g&s"
     },
     {
-      "id": 3,
+      "id": 2,
       "company": "Capoffshore, Casablanca",
       "role": "Intégrateur Web",
       "date": "Septembre 2018 - Décembre 2019",
@@ -204,7 +223,7 @@
       "img": "data:image/jpeg;base64,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"
     },
     {
-      "id": 4,
+      "id": 1,
       "company": "Capoffshore, Casablanca",
       "role": "Stagiaire Intégrateur Web",
       "date": "Septembre 2018 - Décembre 2018",
@@ -218,7 +237,35 @@
 
   "projects_info": [
     {
-      "id": 0,
+      "id": 7,
+      "title": "Recar",
+      "date": "Mar 2024 - Présent",
+      "description": "Une plateforme marocaine de location de voitures qui permet aux utilisateurs de choisir et réserver facilement leur véhicule idéal pour explorer le Maroc. La plateforme permet aux clients de sélectionner leurs itinéraires et voitures préférées en quelques clics, offrant une liberté et une flexibilité totales dans la planification des voyages. Recar simplifie le processus de location de voiture avec une interface intuitive pour trouver et réserver des véhicules qui correspondent aux besoins spécifiques des utilisateurs.",
+      "image": "https://recar.ma/images/logo.svg",
+      "tags": ["HTML", "Tailwind", "Bootstrap", "React", "Laravel"],
+      "category": "application web",
+      "webapp": "https://www.recar.ma/"
+    },
+    {
+      "id": 6,
+      "title": "Hospital manager",
+      "date": "Déc 2023 - Présent",
+      "description": "Tout pour la gestion médicale. Transformez votre établissement médical en une machine performante avec HospitalManager.",
+      "image": "https://www.hospitalmanager.app/web/img/logo.jpg",
+      "tags": [
+        "HTML",
+        "Tailwind",
+        "Bootstrap",
+        "JavaScript",
+        "Laravel",
+        "Ajax",
+        "Alpine.js"
+      ],
+      "category": "application web",
+      "webapp": "https://www.hospitalmanager.app/"
+    },
+    {
+      "id": 5,
       "title": "Digitallearning.app",
       "date": "Avr 2023 - Avr 2024",
       "description": "Créez une variété de contenus éducatifs : texte, vidéo, audio, image... et animez vos formations avec des quiz ludiques pour évaluer les connaissances de vos apprenants.",
@@ -236,7 +283,7 @@
       "webapp": "https://digitallearning.app/"
     },
     {
-      "id": 1,
+      "id": 4,
       "title": "Getmanager",
       "date": "Mai 2023 - Présent",
       "description": "Get manager est une solution de gestion d'entreprise qui aide à suivre : projets et tâches, factures et propositions, recrutement et gestion des présences.",
@@ -254,7 +301,7 @@
       "webapp": "https://demo.getmanager.io/"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Checksite",
       "date": "Juin 2023 - Jan 2024",
       "description": "Solution tout-en-un pour site web. Boostez les performances de votre site web avec nos solutions d'audit et de surveillance.",
@@ -272,7 +319,7 @@
       "webapp": "https://checksite.io/"
     },
     {
-      "id": 3,
+      "id": 2,
       "title": "Animo",
       "date": "Avr 2022 - Oct 2022",
       "description": "A contribué à la création de Animo.ma (un site web qui fait l'intermédiaire entre les acheteurs, les vendeurs et les personnes souhaitant acheter, vendre ou adopter des animaux de compagnie).",
@@ -292,7 +339,7 @@
       "webapp": "https://animo.ma/"
     },
     {
-      "id": 4,
+      "id": 1,
       "title": "Digital manager",
       "date": "Avr 2022 - Présent",
       "description": "Digital manager est la plateforme qui améliore la collaboration, la productivité et l'efficacité de vos employés · Restez organisé · Gérez tout",
@@ -300,26 +347,13 @@
       "tags": ["HTML", "CSS", "SCSS", "JavaScript", "Laravel", "Ajax"],
       "category": "application web",
       "webapp": "https://digitalmanager.ma/"
-    },
-    {
-      "id": 5,
-      "title": "Hospital manager",
-      "date": "Déc 2023 - Présent",
-      "description": "Tout pour la gestion médicale. Transformez votre établissement médical en une machine performante avec HospitalManager.",
-      "image": "https://www.hospitalmanager.app/web/img/logo.jpg",
-      "tags": [
-        "HTML",
-        "Tailwind",
-        "Bootstrap",
-        "JavaScript",
-        "Laravel",
-        "Ajax",
-        "Alpine.js"
-      ],
-      "category": "application web",
-      "webapp": "https://www.hospitalmanager.app/"
     }
   ],
+
+  "project_details": {
+    "members": "Membres",
+    "view_live": "Voir en ligne"
+  },
 
   "education_desc": "Mon parcours éducatif a été un voyage de découverte de soi et de croissance. Voici les détails de ma formation.",
 
