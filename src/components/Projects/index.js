@@ -6,16 +6,16 @@ import {
   Title,
   Desc,
   CardContainer,
-  ToggleButtonGroup,
-  ToggleButton,
-  Divider,
+  //ToggleButtonGroup,
+  //ToggleButton,
+  //Divider,
 } from "./ProjectsStyle";
 import ProjectCard from "../Cards/ProjectCards";
-import { projects } from "../../data/constants";
+//import { projects } from "../../data/constants";
 import { useTranslation } from "react-i18next";
 
 const Projects = ({ openModal, setOpenModal }) => {
-  const [toggle, setToggle] = useState("all");
+  const [toggle/*, setToggle*/] = useState("all");
   const { t } = useTranslation();
   return (
     <Container id="projects">
